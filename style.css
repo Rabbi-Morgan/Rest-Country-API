@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --very_light_gray: hsl(0, 0%, 98%);
+}
+
+html {
+  font-family: "Nunito Sans", sans-serif;
+}
+/* The container must be positioned relative: */
+.select {
+  position: relative;
+  font-family: Arial;
+}
+
+.select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+/* Style the arrow inside the select element: */
+.select-selected {
+  background-color: var(--very_light_gray);
+}
+img {
+  max-width: 100%;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: black;
+  padding: 12px 20px;
+  font-weight: 600;
+  width: 250px;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+}
+.select-items,
+.select-selected {
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--very_light_gray);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  margin-top: 0.5rem;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
