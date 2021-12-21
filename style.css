@@ -12,7 +12,9 @@ html {
   position: relative;
   font-family: Arial;
 }
-
+.z-1000 {
+  z-index: 1000;
+}
 .select select {
   display: none; /*hide original SELECT element:*/
 }
@@ -34,6 +36,11 @@ img {
   width: 250px;
   cursor: pointer;
   font-family: "Nunito Sans", sans-serif;
+}
+@media screen and (max-width: 766px) {
+  .select-items div {
+    width: 100%;
+  }
 }
 .select-items,
 .select-selected {
@@ -59,4 +66,13 @@ img {
 .select-items div:hover,
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+.dark .select-items div,
+.dark .select-selected {
+  background-color: rgb(55 65 81);
+  color: rgb(243 244 246);
+}
+.dark .select-items div:hover,
+.dark .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.4);
 }
