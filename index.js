@@ -83,3 +83,34 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+// this is to toggle the dark class on the body
+const mainCont = document.querySelector('body');
+const darkToggle = document.querySelector('.dark_mode');
+
+
+let locVal = localStorage.getItem('mode')
+
+
+const darkMode = ()=> {
+  mainCont.classList.add('dark')
+  localStorage.setItem('mode', 'dark')
+}
+const lightMode = ()=> {
+  mainCont.classList.remove('dark');
+  localStorage.setItem('mode', null)
+}
+
+if(locVal == 'dark') {
+  darkMode();
+}
+
+darkToggle.addEventListener('click', () => {
+  locVal = localStorage.getItem('mode');
+  if(locVal !== 'dark') {
+    darkMode();
+  }else {
+    lightMode();
+  }
+})
+
