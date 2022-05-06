@@ -13,8 +13,8 @@
     <title>RCA | Rest Country Api</title>
 </head>
 <body class="overflow-x-hidden">
-    <div class="bg-gray-100 dark:bg-gray-800">
-    <header class="header z-1000 bg-white shadow-md dark:bg-gray-700 dark:text-gray-100">
+    <div class="bg-gray-200 dark:bg-gray-800">
+    <header class="header z-1000 bg-gray-100 shadow-md dark:bg-gray-700 dark:text-gray-100">
         <div class="container px-4 py-8 lg:px-0 lg:py-4 mx-auto flex justify-between py-4 mb-6">
             <div class="question_cont text-gray-900 dark:text-white text-sm md:text-lg font-extrabold">Where in the world?</div>
             <div class="dark_mode"><i class="far fa-moon"></i> <p class="dark:text-white text-sm  font-semibold cursor-pointer hover:text-gray-400 text-gray-800"> <i class="uil uil-moon inline-block px-2"></i> Dark Mode</p></div>
@@ -26,88 +26,88 @@
             <div class="input relative"><input type="search" class="placeholder-gray-300::placeholder py-3 pl-16 pr-4 shadow-md rounded focus:outline-none md:inline-flex w-full md:w-96 dark:bg-gray-700 dark:text-gray-100" placeholder="Search for a country..." name="search" id="search">
             <i class="uil uil-search text-gray-400 absolute top-3 left-6"></i></div>
             <div class="select my-8 md:my-0">
-                <select name="region" placeholder="Filter" class="z-10 shadow px-8 py-4 rounded focus:outline-none" id="region">
+                <select name="region" onchange="update()" placeholder="Filter" class="z-10 shadow px-8 py-4 rounded focus:outline-none" id="region">
                     <option value="title">Filter by Region <i class="uil uil-angle-down"></i></i></option>
-                    <option value="Africa">Africa </option>
-                    <option value="America">America</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Oceania">Oceania</option>
+                    <option value="africa">Africa </option>
+                    <option value="america">America</option>
+                    <option value="asia">Asia</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
                 </select>
             </div>
         </form>
         <section class="flag-section my-8 ">
             <div class="countries flex justify-center md:justify-between gap-1 flex-wrap overflow-hidden">
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 mb-8">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont shadow-md mb-8 w- rounded overflow-hidden">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100 dark:bg-gray-700   p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc bg-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:bg-gray-700 h-3/5  p-4">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region:  <span class="region"> </span></p>
+                        <p class="cap">Capital:  <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 w-">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 ">
-                    <div class="img w-full"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 w-">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 w-">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 w-">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
-                <div class="country-cont rounded overflow-hidden shadow-md mb-8 w-">
-                    <div class="img"><img class="w-64" src="./design/Images/um.png" alt=""></div>
-                    <div class="desc bg-white dark:bg-gray-700 dark:text-gray-100  p-4">
-                        <h1 class="desc-heading text-lg font-extrabold mb-4">Germany</h1>
-                        <p class="pop text-sm font-bold mb-2">Population: <span class="dark:text-gray-200 pop-num font-normal"> 206,135,893</span></p>
-                        <p class="reg text-sm font-bold mb-2">Region:<span class="region font-normal"> Americas</span></p>
-                        <p class="cap text-sm font-bold mb-2">Capital:<span class="capital font-normal"> Washington.D.C.</span></p>
+                <div class="country-cont">
+                    <div class="img"><img class="object-cover" src="./design/Images/um.png" alt=""></div>
+                    <div class="desc">
+                        <h1 class="desc-heading"></h1>
+                        <p class="pop">Population: <span class="pop-num"> </span></p>
+                        <p class="reg">Region: <span class="region"> </span></p>
+                        <p class="cap">Capital: <span class="capital"> </span></p>
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    <p class="name">Border Countries:</p><span class="first-bc">France</span><span class="second-bc">Germany</span> <span class="third-bc">Nerthelands</span>
+                    <p class="name">Border Countries:</p><span class="first-bc">France</span><span class="second-bc"></span> <span class="third-bc">Nerthelands</span>
                 </div>
             </div>
         </div>

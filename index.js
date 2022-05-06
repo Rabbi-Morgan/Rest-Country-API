@@ -39,6 +39,8 @@ for (i = 0; i < l; i++) {
         }
       }
       h.click();
+      // 
+      update();
     });
     b.appendChild(c);
   }
@@ -114,3 +116,64 @@ darkToggle.addEventListener('click', () => {
   }
 })
 
+
+
+fetch ('https://restcountries.com/v3.1/region/africa').then(response => response.json()).then((data)=> {
+  var listCount = data.length;
+  for(let i=0; i<=listCount; i++){
+    data[i].name.official
+};
+});
+
+let defaultCountry = ['germany', 'usa', 'brazil', 'iceland', 'afghanistan', 'aland', 'albania', 'algeria'];
+
+for(let i=0; i<= defaultCountry.length; i++) {
+  
+  fetch (`https://restcountries.com/v2/name/${defaultCountry[i]}`).then(response => {
+      // indicates whether the response is successful (status code 200-299) or not
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${reponse.status}`)
+      }
+      return response.json()
+    }).then((data) => {
+    document.querySelectorAll('.img img')[i].src = data[0].flag;
+    document.querySelectorAll('.desc-heading')[i].innerText = data[0].name;
+      // well, I tried this one because it's short but I have a doubt if it will work for safari, and that will be a problem if it doesn't. I will know when I deploy it since I don't use mac :) 
+    document.querySelectorAll('.pop-num')[i].innerText = (data[0].population).toLocaleString('en-US');
+    // this code seems to be the safest, really don't understand it yet because of the rejex
+      
+    // document.querySelectorAll('.pop-num')[i].innerText = data[0].population.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");;
+    document.querySelectorAll('.region')[i].innerText = data[0].region;
+    document.querySelectorAll('.capital')[i].innerText = data[0].capital;
+  });
+}
+
+var select = document.getElementById('region');
+function update() {
+
+  // for the function update, we have to do 3 basic things: 1. get the value of the option, 2. use the value to fetch data from the API 3. display the data that was fetched 
+
+  // 1
+  var option = select.options[select.selectedIndex].value;
+  
+  //document.getElementById('value').value = option.value;
+
+  // 2
+
+  return fetch(`https://restcountries.com/v3.1/region/${option}`).then(response => response.json()).then((data) => {
+    guiUpdate(data);
+});
+  //document.getElementById('text').value = option.text;
+
+  // 3
+}
+let bigCont = document.getElementsByClassName('contries');
+let guiUpdate = (info)=> {
+  for(let i=0; i<= info.length; i++){
+    /*var fc = document.createElement("DIV");
+    fc.setAttribute("class", "country-cont");
+    fc.innerHTML = info[i].name.common;
+    bigCont.appendChild(fc); */
+      console.log(info[i].name.common)
+    }
+}

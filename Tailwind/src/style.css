@@ -3,3 +3,31 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.country-cont {
+  @apply w-64 rounded overflow-hidden shadow-md mb-8 mb-8;
+}
+.desc {
+  @apply bg-gray-100 dark:bg-gray-700 dark:text-gray-100 p-4;
+}
+.desc-heading {
+  @apply text-lg font-extrabold mb-4;
+}
+.pop {
+  @apply text-sm font-bold mb-2;
+}
+.pop-num {
+  @apply dark:text-gray-200 font-normal;
+}
+.reg {
+  @apply text-sm font-bold mb-2;
+}
+.region {
+  @apply font-normal;
+}
+.cap {
+  @apply text-sm font-bold mb-2;
+}
+.capital {
+  @apply font-normal;
+}
